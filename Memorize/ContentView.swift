@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Memorize
+//  Memorize | Assignment 1
 //
 //  Created by Rojin Prajapati on 10/13/23.
 //
@@ -19,8 +19,8 @@ struct ContentView: View {
     
     @State var selectedTheme: [String] =  []
     @State var themeColor: Color = Color.gray
-    
     @State var cardCounter: Int = 3
+    
     var body: some View {
         
         VStack{
@@ -32,14 +32,8 @@ struct ContentView: View {
             Spacer()
             addTheme
             Spacer()
-            cardAddRemove(theme: selectedTheme)
+            //cardAddRemove(theme: selectedTheme)
         }.padding()
-    }
-    
-    var themePicker: some View {
-        HStack {
-            
-        }
     }
     
     func themeButton(themeName: String, theme: [String], themeColor: Color, symbol: String) -> some View {
@@ -71,6 +65,8 @@ struct ContentView: View {
         }
     }
     
+    /*
+    // methods that can add and remove the cards from view
     func cardAddRemove(theme: [String])-> some View {
         HStack{
             cardCountAdjuster(by: 1, symbol: "rectangle.stack.fill.badge.plus", theme: theme)
@@ -84,32 +80,8 @@ struct ContentView: View {
             Image(systemName: symbol)
                 .imageScale(.large)
         }.disabled(cardCounter + offset < 0 || cardCounter + offset > theme.count)
-    }
-    
+    }*/
 }
-
-//struct themeView: View {
-//    
-//    
-//    var body: some View {
-//        // title
-//        // card list of selected theme
-//        // lists of theme button
-//        // card add/remove button
-//        VStack{
-//            Text("Memorize!").font(.largeTitle)
-//            ScrollView{
-//                cards(theme: food)
-//            }
-//            Spacer()
-//            addTheme
-//            Spacer()
-//            cardAddRemove(theme: food)
-//        }.padding()
-//    }
-//        
-//}
-    
 
 // create a card view for a memorize game so you can reuse it every time to create a new card
 struct CardView: View {
@@ -131,8 +103,6 @@ struct CardView: View {
         }
     }
 }
-
-
 
 #Preview {
     ContentView()
